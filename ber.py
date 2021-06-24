@@ -7,7 +7,7 @@ from scipy import special as sp
 from scipy import integrate
 import matplotlib.pyplot as plt
 
-N = 10000
+N = 100000
 
 d1 = mod.getSource(N,'BPSK')
 sig1 = mod.getModulator(d1,'BPSK')
