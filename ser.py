@@ -103,9 +103,9 @@ def plotSER(rxList) -> None:
     plt.xticks(x)
     plt.yscale('log')
     plt.grid(True, which='both')
-    plt.title('{:s} SER'.format(rxList.modType))
+    plt.title('{:s} Simulation and Theoritical SER Comparison'.format(rxList.modType))
     plt.xlabel('SNR (dB)')
-    plt.ylabel('SER')
+    plt.ylabel('Error Rate')
     plt.show()
 
 def plotAll(list1, list2, list3, list4) -> None:
@@ -118,9 +118,9 @@ def plotAll(list1, list2, list3, list4) -> None:
     plt.xticks(x)
     plt.yscale('log')
     plt.grid(True, which='both')
-    plt.title('SER comparison')
+    plt.title('SER Comparison of Modulations in AWGN Channel')
     plt.xlabel('SNR (dB)')
-    plt.ylabel('SER')
+    plt.ylabel('Error Rate')
     plt.show()
 
 def interface() -> None:
