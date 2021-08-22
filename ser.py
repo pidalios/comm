@@ -1,3 +1,4 @@
+import argparse
 from comm import channel, mod
 import random
 import numpy as np
@@ -123,38 +124,40 @@ def plotAll(list1, list2, list3, list4) -> None:
     plt.ylabel('Error Rate')
     plt.show()
 
-def interface() -> None:
-    N = int(input('Input number of symbols: '))
-    flag = input('Input modulation type: ')
+def parse_args():
+    parser = argparse.ArgumentParser(description='SER performance comparison.')
+    parser.add_argument("-n", "--N", default=10000, type=int, help='Number of symbols.', metavar='')
+    parser.add_argument('-m', '--ModType', default='QPSK', type=str.lower, help='Modulation type.', metavar='')
+    return parser.parse_args()
+
+def main(args) -> None:
     ModList = rxList()
-    if flag=='BPSK' or flag=='bpsk':
-        BPSKBlock(N, ModList)
+    if args.ModType=='bpsk':
+        BPSKBlock(args.N, ModList)
         plotSER(ModList)
-    elif flag=='QPSK' or flag=='qpsk':
-        QPSKBlock(N, ModList)
+    elif args.ModType=='qpsk':
+        QPSKBlock(args.N, ModList)
         plotSER(ModList)
-    elif flag=='8PSK' or flag=='8psk':
-        PSK8Block(N, ModList)
+    elif args.ModType=='8psk':
+        PSK8Block(args.N, ModList)
         plotSER(ModList)
-    elif flag=='16QAM' or flag=='16qam':
-        QAM16Block(N, ModList)
+    elif args.ModType=='16qam':
+        QAM16Block(args.N, ModList)
         plotSER(ModList)
-    elif flag=='ALL' or flag=='all':
+    elif args.ModType=='all':
         BPSK = rxList()
         QPSK = rxList()
         PSK8 = rxList()
         QAM16 = rxList()
-        BPSKBlock(N, BPSK)
-        QPSKBlock(N, QPSK)
-        PSK8Block(N, PSK8)
-        QAM16Block(N, QAM16)
+        BPSKBlock(args.N, BPSK)
+        QPSKBlock(args.N, QPSK)
+        PSK8Block(args.N, PSK8)
+        QAM16Block(args.N, QAM16)
         plotAll(BPSK, QPSK, PSK8, QAM16)
     else:
         print('Error')
         sys.exit(0)
 
-def main() -> None:
-    interface()
-
 if __name__=='__main__':
-    main()
+    args = parse_args()
+    main(args)

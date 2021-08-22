@@ -4,13 +4,13 @@ import sys
 
 # Get Functions
 def getModulator(thelist,modType):
-    if modType == 'BPSK' or modType == '2PSK' or modType == 'bpsk':
+    if modType == 'bpsk':
         return BPSKModulator(thelist)
-    elif modType == 'QPSK' or modType == '4PSK' or modType == 'qpsk':
+    elif modType == 'qpsk':
         return QPSKModulator(thelist)
-    elif modType == '8PSK' or modType == '8psk':
+    elif modType == '8psk':
         return PSK8Modulator(thelist)
-    elif modType == '16QAM' or modType == '16qam':
+    elif modType == '16qam':
         return QAM16Modulator(thelist)
     else:
         print('The modulation type "{:s}" is not defined.'.format(modType))
@@ -19,13 +19,13 @@ def getModulator(thelist,modType):
 
 
 def getDemodulator(thelist,modType):
-    if modType == 'BPSK' or modType == '2PSK' or modType == 'bpsk':
+    if modType == 'bpsk':
         return BPSKDemodulator(thelist)
-    elif modType == 'QPSK' or modType == '4PSK' or modType == 'qpsk':
+    elif modType == 'qpsk':
         return QPSKDemodulator(thelist)
-    elif modType == '8PSK' or modType == '8psk':
+    elif modType == '8psk':
         return PSK8Demodulator(thelist)
-    elif modType == '16QAM' or modType == '16qam':
+    elif modType == '16qam':
         return QAM16Demodulator(thelist)
     else:
         print('The modulation type "{:s}" is not defined.'.format(modType))
@@ -35,22 +35,22 @@ def getDemodulator(thelist,modType):
 
 def getSource(N,modType):
     output = []
-    if modType == 'BPSK' or modType == '2PSK' or modType == 'bpsk':
+    if modType == 'bpsk':
         M = 2
         for i in range(0,N):
                 output.append(rd.randint(0,M-1))
         return output
-    elif modType == 'QPSK' or modType == '4PSK' or modType == 'qpsk':
+    elif modType == 'qpsk':
         M = 4
         for i in range(0,N):
                 output.append(rd.randint(0,M-1))
         return output
-    elif modType == '8PSK' or modType == '8psk':
+    elif modType == '8psk':
         M = 8
         for i in range(0,N):
                 output.append(rd.randint(0,M-1))
         return output
-    elif modType == '16QAM' or modType == '16qam':
+    elif modType == '16qam':
         M = 16
         for i in range(0,N):
                 output.append(rd.randint(0,M-1))
@@ -241,8 +241,6 @@ def QAM16Demodulator(thelist):
         elif real_part[i] < -2 and imag_part[i] < -2:
             output.append(15)
     return output
-
-
 
 # Symbol error
 def symerr(listA,listB):	
