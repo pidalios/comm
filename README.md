@@ -32,7 +32,7 @@ This file gives symbol-error rate (SER) comparison with different modulation tec
 ['BPSK', 'QPSK', '8PSK', '16QAM']
 ```
 
-The program allows you to choose one of these modulation types. Then, it shows the comparison of simulation and theoritical SER [[1](ref1)] of the modulation type you choose.
+The program allows you to choose one of these modulation types. Then, it shows the comparison of simulation and theoritical SER [[1](#ref1)] of the modulation type you choose.
 
 The following figure is the result of QPSK with 100000 symbols.
 
@@ -59,4 +59,4 @@ pip install -r requirements.txt
 ```
 
 ## Reference
-[[1](ref1)] Rodger E. Ziemer and William H. Tranter (2014). *Principles of Communications: Systems, Modulation, and Noise*. 7th ed. New Jersey: John Wiley & Sons.
+[[1](#ref1)] Rodger E. Ziemer and William H. Tranter (2014). *Principles of Communications: Systems, Modulation, and Noise*. 7th ed. New Jersey: John Wiley & Sons.
