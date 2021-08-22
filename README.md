@@ -36,10 +36,9 @@ The following figure is the result with 100000 symbols.
 ## Requirement
 >It works on python@3.9
 
-Required modules:
-* matplotlib
-* scipy
-* numpy
+Install the requirements via pip.
+
+``pip install -r requirements.txt``
 
 ## Reference
 [1] Rodger E. Ziemer and William H. Tranter (2014). *Principles of Communications: Systems, Modulation, and Noise*. 7th ed. New Jersey: John Wiley & Sons.

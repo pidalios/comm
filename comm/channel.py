@@ -2,6 +2,7 @@ import random
 import numpy as np
 
 def awgnChannel(thelist,snr):
+    # SNR = Es/No
     output = []
     E_avg = sum(np.abs(thelist)**2)/len(thelist)
     SNR_linear = 10**(snr/10)

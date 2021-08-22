@@ -10,7 +10,7 @@ class rxList():
         rxList.modType = ''
         rxList.simulation = []
         rxList.theoretical = []
-        
+
 def BPSKBlock(N, rxList) -> None:
     data = mod.getSource(N, 'BPSK')
     modSig = mod.getModulator(data, 'BPSK')
